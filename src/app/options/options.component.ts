@@ -41,6 +41,9 @@ export class OptionsComponent implements OnInit {
   roleBasedDiscussionsChecked: boolean = false;
   fillInBlankChecked: boolean = false;
 
+  // New property to hold the built string for the template
+  builtOptionsString: string = '';
+
   // Subject Area options
   subjects: string[] = [
     'Science',
@@ -91,9 +94,9 @@ export class OptionsComponent implements OnInit {
     if (this.thematicTone) options.push(`The tone of the lesson is ${this.thematicTone}`);
     // if (this.deliveryPreference) options.push(`Delivery: ${this.deliveryPreference}`);
 
-    const builtOptionsString = options.join(', ');
+    this.builtOptionsString = options.join(', '); // Store the string locally
     // Update the service instead of the local property
-    this.optionsService.updateOptions(builtOptionsString);
-    // console.log('Selected Options:', builtOptionsString); // Keep for debugging if needed
+    this.optionsService.updateOptions(this.builtOptionsString); // Send the locally stored string
+    // console.log('Selected Options:', this.builtOptionsString); // Keep for debugging if needed
   }
 }

@@ -1,0 +1,6 @@
+.lecture-content {
+    height: 95vh;
+    /* 95% of viewport height */
+    overflow-y: auto;
+    /* Add vertical scroll if content overflows */
+}

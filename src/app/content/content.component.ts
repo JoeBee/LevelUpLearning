@@ -16,15 +16,15 @@ import { OptionsService } from '../shared/options.service';
 export class ContentComponent implements OnInit, OnDestroy {
   originalLecture: string = `
 On November 19, 1863, Abraham Lincoln delivered one of the most famous speeches in American history: the Gettysburg Address.  
-The Union victory at Gettysburg was a key moment in the Civil War—thwarting General Robert E. Lee’s invasion of the North.  
+The Union victory at Gettysburg was a key moment in the Civil War—thwarting General Robert E. Lee's invasion of the North.  
 President Lincoln offered this brief speech in a dedication ceremony for a new national cemetery near the Gettysburg battlefield.  
 Lincoln was not even the featured speaker that day.  Noted orator Edward Everett spoke for nearly two hours, while Lincoln spoke for a mere two minutes.  
 In his powerful address, Lincoln embraced the Declaration of Independence, 
-recalling how the nation was “conceived in Liberty, and dedicated to the proposition that all men are created equal.”  
-By resurrecting these promises, Lincoln committed post-Civil War America to “a new birth of freedom.”  
+recalling how the nation was "conceived in Liberty, and dedicated to the proposition that all men are created equal."  
+By resurrecting these promises, Lincoln committed post-Civil War America to "a new birth of freedom."  
 Following the Civil War, the Reconstruction Amendments—the Thirteenth, Fourteenth, and Fifteenth Amendments—abolished slavery, 
-wrote the Declaration of Independence’s commitment to freedom and equality into the Constitution, and promised to ban racial discrimination in voting.  
-In so doing, the amendments sought to make Lincoln’s “new birth of freedom” a constitutional reality.
+wrote the Declaration of Independence's commitment to freedom and equality into the Constitution, and promised to ban racial discrimination in voting.  
+In so doing, the amendments sought to make Lincoln's "new birth of freedom" a constitutional reality.
 `;
   gamifiedLecture: string = '';
   isLoading: boolean = false;
@@ -69,6 +69,7 @@ In so doing, the amendments sought to make Lincoln’s “new birth of freedom�
     }).subscribe({
       next: (response) => {
         this.gamifiedLecture = response.response;
+        this.optionsService.updateGamifiedLecture(this.gamifiedLecture);
         this.isLoading = false;
         console.log('* gamifiedLecture:', this.gamifiedLecture);
         console.log('* response:', response);
