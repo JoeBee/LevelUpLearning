@@ -60,7 +60,7 @@ In so doing, the amendments sought to make Lincoln's "new birth of freedom" a co
 
     // prompt: `Make the following text entertaining for 6th graders using Star Wars references: ${this.originalLecture}`
 
-    const instruction = `. Make the following text entertaining. Break it up into sections and add a quiz after each section.`;
+    const instruction = `. Make the following text entertaining. Break it up into sections and add audience engagement after each section.`;
     const promptPayload = `${instruction} ${this.currentOptionsString}: ${this.originalLecture}`;
     console.log('*** Sending prompt:', promptPayload);
 
