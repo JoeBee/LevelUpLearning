@@ -1,0 +1,71 @@
+.options-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.options-field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.options-section {
+    margin-bottom: 25px;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.options-label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, .6);
+}
+
+.options-radio-group {
+    display: flex;
+    flex-direction: column;
+    /* Stack vertically */
+}
+
+.options-radio-button {
+    margin-bottom: 8px;
+}
+
+.options-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    /* Stack vertically */
+}
+
+.options-checkbox {
+    margin-bottom: 8px;
+}
+
+/* Adjust spacing for hint */
+.mat-mdc-form-field-hint {
+    margin-top: 10px;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Style for mat-select dropdown panel background */
+::ng-deep .mat-mdc-select-panel {
+    background-color: white;
+}
+
+/* Ensure overlay pane also has a background (might help with initial render) */
+::ng-deep .cdk-overlay-pane {
+    background-color: white;
+}
+
+.options-card {
+    max-height: calc(100vh - 100px);
+    /* Adjust height as needed */
+    overflow: auto;
+    margin: 20px;
+}

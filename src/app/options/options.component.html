@@ -1,1 +1,85 @@
-<p>options works!</p>
+<mat-card class="options-card">
+    <div class="options-container">
+        <!-- Display the generated string (optional) -->
+        <div class="options-summary" *ngIf="selectedOptionsString">
+            <h3>Selected Options Summary:</h3>
+            <p>{{ selectedOptionsString }}</p>
+        </div>
+
+        <h2>Configure Your Gamified Lesson</h2>
+
+        <mat-form-field appearance="fill" class="options-field">
+            <mat-label>Subject Area</mat-label>
+            <mat-select id="subjectArea" [(ngModel)]="selectedSubject" (selectionChange)="optionsBuilder()">
+                <mat-option value="">Select Subject</mat-option>
+                <mat-option *ngFor="let subject of subjects" [value]="subject">
+                    {{ subject }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="options-field">
+            <mat-label>Grade Level</mat-label>
+            <mat-select id="gradeLevel" [(ngModel)]="selectedGradeLevel" (selectionChange)="optionsBuilder()">
+                <mat-option value="">Select Grade Level</mat-option>
+                <mat-option *ngFor="let grade of gradeLevels" [value]="grade">
+                    {{ grade }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="options-section">
+            <label id="engagement-duration-label" class="options-label">Engagement Duration</label>
+            <mat-radio-group aria-labelledby="engagement-duration-label" class="options-radio-group"
+                name="engagementDuration" [(ngModel)]="engagementDuration" (change)="optionsBuilder()">
+                <mat-radio-button class="options-radio-button" value="30">30 minutes</mat-radio-button>
+                <mat-radio-button class="options-radio-button" value="45">45 minutes</mat-radio-button>
+                <mat-radio-button class="options-radio-button" value="60">60 minutes</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="options-section">
+            <label id="gamification-elements-label" class="options-label">Gamification Elements (Choose up to 3)</label>
+            <div class="options-checkbox-group" aria-labelledby="gamification-elements-label">
+                <mat-checkbox id="quizChallenges" class="options-checkbox" [(ngModel)]="quizChallengesChecked"
+                    (change)="optionsBuilder()">Multiple-choice quiz challenges</mat-checkbox>
+                <mat-checkbox id="pointSystem" class="options-checkbox" [(ngModel)]="pointSystemChecked"
+                    (change)="optionsBuilder()">Team-based point system</mat-checkbox>
+                <mat-checkbox id="timeBasedPuzzles" class="options-checkbox" [(ngModel)]="timeBasedPuzzlesChecked"
+                    (change)="optionsBuilder()">Time-based puzzles or tasks</mat-checkbox>
+                <mat-checkbox id="classroomPolls" class="options-checkbox" [(ngModel)]="classroomPollsChecked"
+                    (change)="optionsBuilder()">Low-stakes classroom polls</mat-checkbox>
+                <mat-checkbox id="roleBasedDiscussions" class="options-checkbox"
+                    [(ngModel)]="roleBasedDiscussionsChecked" (change)="optionsBuilder()">Role-based
+                    discussions</mat-checkbox>
+                <mat-checkbox id="fillInBlank" class="options-checkbox" [(ngModel)]="fillInBlankChecked"
+                    (change)="optionsBuilder()">Fill-in-the-blank activities</mat-checkbox>
+            </div>
+            <mat-hint>Note: Limiting selection to 3 requires component logic.</mat-hint>
+        </div>
+
+        <div class="options-section">
+            <label id="thematic-tone-label" class="options-label">Thematic Tone</label>
+            <mat-radio-group aria-labelledby="thematic-tone-label" class="options-radio-group" name="thematicTone"
+                [(ngModel)]="thematicTone" (change)="optionsBuilder()">
+                <mat-radio-button class="options-radio-button" value="neutral">Neutral Professional
+                    (default)</mat-radio-button>
+                <mat-radio-button class="options-radio-button" value="trivia">Trivia Challenge</mat-radio-button>
+                <mat-radio-button class="options-radio-button" value="quest">Exploratory Quest</mat-radio-button>
+                <mat-radio-button class="options-radio-button" value="mystery">Mystery Investigation</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <!-- <div class="options-section">
+            <label id="delivery-preferences-label" class="options-label">Delivery Preferences</label>
+            <mat-radio-group aria-labelledby="delivery-preferences-label" class="options-radio-group"
+                name="deliveryPreference" [(ngModel)]="deliveryPreference" (change)="optionsBuilder()">
+                <mat-radio-button class="options-radio-button" value="projector">Projector display</mat-radio-button>
+                <mat-radio-button class="options-radio-button" value="handouts">Printed handouts</mat-radio-button>
+                <mat-radio-button class="options-radio-button" value="both">Both</mat-radio-button>
+            </mat-radio-group>
+        </div> -->
+
+        <br><br><br>
+    </div>
+</mat-card>

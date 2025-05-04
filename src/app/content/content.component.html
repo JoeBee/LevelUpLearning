@@ -1,5 +1,6 @@
 <div class="content-container">
-    <button mat-raised-button color="primary" (click)="gamifyLecture()" [disabled]="isLoading">Gamify Lecture</button>
+    <button mat-raised-button color="primary" (click)="gamifyLecture()" [disabled]="isLoading"
+        [ngClass]="{'faded': isLoading}">Gamify Lecture</button>
 
     <div class="text-area-container">
         <textarea placeholder="Enter original lecture text here..." [(ngModel)]="originalLecture"></textarea>

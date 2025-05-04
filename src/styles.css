@@ -3,9 +3,10 @@
 html,
 body {
     height: 100%;
+    overflow: hidden;
+    /* Prevent outer scroll bar */
     margin: 0;
     padding: 0;
-    overflow: hidden;
     /* Prevent body scrolling */
     font-family: Roboto, "Helvetica Neue", sans-serif;
     /* Set global font to Roboto */
@@ -14,6 +15,8 @@ body {
 /* Add margin to the content area within tabs */
 .mat-mdc-tab-body-content {
     margin: 15px;
+    overflow: auto;
+    /* Allow scrolling within the tab content if needed */
     /* Ensure content doesn't overflow due to margin by adjusting box-sizing if needed */
     /* box-sizing: border-box; */
     /* Usually not needed as default is content-box */

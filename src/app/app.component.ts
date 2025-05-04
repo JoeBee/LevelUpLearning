@@ -24,5 +24,5 @@ import { InteractivityComponent } from './interactivity/interactivity.component'
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Level Up Learning';
+  title = 'GAMUCATE';
 }

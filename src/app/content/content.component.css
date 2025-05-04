@@ -18,18 +18,16 @@
     /* Attempt to take full height within flex item */
 }
 
-textarea {
+.text-area-container textarea {
     flex: 1;
-    /* Make each textarea take equal width */
-    height: 100%;
-    /* Make textareas fill the container height */
-    box-sizing: border-box;
-    /* Include padding/border in height */
-    resize: none;
-    /* Optional: disable manual resizing */
+    margin: 10px;
     padding: 10px;
+    min-height: 300px;
+    /* Adjust height as needed */
     border: 1px solid #ccc;
     border-radius: 4px;
+    resize: vertical;
+    /* Allow vertical resizing */
 }
 
 /* Ensure the button doesn't take up unnecessary vertical space */
@@ -37,4 +35,11 @@ button {
     margin-bottom: 15px;
     flex-shrink: 0;
     /* Prevent button from shrinking */
+}
+
+.faded {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+    cursor: default;
+    /* Optional: change cursor when faded/disabled */
 }
