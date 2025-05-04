@@ -31,22 +31,25 @@ Finally, we'll touch upon how these individual cells work together. Just like th
     this.gamifiedLecture = '';
     this.errorMessage = null;
 
-    const apiUrl = '/api/gamify';
-    const prompt = `Make the following text entertaining for 6th graders using Star Wars references:`;
+    // const apiUrl = 'http://127.0.0.1:8000/generate';
+    // const apiUrl = 'http://127.0.0.1:8000';
+    const apiUrl = 'http://127.0.0.1:8000/api/generate';
 
-    this.http.post<{ gamifiedText: string }>(apiUrl, {
-      text: this.originalLecture,
-      prompt: prompt
+    this.http.post<{ response: string }>(apiUrl, {
+      prompt: `Make the following text entertaining for 6th graders using Star Wars references: ${this.originalLecture}`
     }).subscribe({
       next: (response) => {
-        this.gamifiedLecture = response.gamifiedText;
+        this.gamifiedLecture = response.response;
         this.isLoading = false;
+        console.log('* gamifiedLecture:', this.gamifiedLecture);
+        console.log('* response:', response);
       },
       error: (error) => {
-        console.error('Error calling gamify API:', error);
-        this.errorMessage = 'Failed to gamify the lecture. Please try again later.';
+        console.error('Error calling API:', error);
+        this.errorMessage = `Failed to gamify the lecture: ${error.error?.detail || 'Unknown error'}`;
         this.gamifiedLecture = 'Error processing request.';
         this.isLoading = false;
+        console.log('* error:', error);
       }
     });
   }
