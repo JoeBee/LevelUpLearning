@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    height: 100vh;
+    /* Make the app component fill the viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    flex-shrink: 0;
+    /* Prevent title from shrinking */
+}
+
+mat-tab-group {
+    flex-grow: 1;
+    /* Allow tab group to fill remaining space */
+    display: flex;
+    /* Use flexbox internally */
+    flex-direction: column;
+}
+
+/* Target the actual content container within the tabs */
+::ng-deep .mat-mdc-tab-body-content {
+    height: 100%;
+    overflow: hidden;
+    /* Prevent double scrollbars if needed */
+}
+
+/* Ensure the container holding the content stretches */
+::ng-deep .mat-mdc-tab-body-wrapper {
+    flex-grow: 1;
+}

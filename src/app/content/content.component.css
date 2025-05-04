@@ -1,0 +1,40 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ensure the main container takes full height */
+    padding: 20px;
+    box-sizing: border-box;
+    /* Include padding in height calculation */
+}
+
+.text-area-container {
+    display: flex;
+    flex-grow: 1;
+    /* Allow this container to grow and fill available space */
+    gap: 10px;
+    /* Add some space between the text areas */
+    height: 100%;
+    /* Attempt to take full height within flex item */
+}
+
+textarea {
+    flex: 1;
+    /* Make each textarea take equal width */
+    height: 100%;
+    /* Make textareas fill the container height */
+    box-sizing: border-box;
+    /* Include padding/border in height */
+    resize: none;
+    /* Optional: disable manual resizing */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Ensure the button doesn't take up unnecessary vertical space */
+button {
+    margin-bottom: 15px;
+    flex-shrink: 0;
+    /* Prevent button from shrinking */
+}

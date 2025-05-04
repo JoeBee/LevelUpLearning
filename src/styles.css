@@ -3,12 +3,12 @@
 html,
 body {
     height: 100%;
-}
-
-body {
     margin: 0;
-    font-family: Verdana, Geneva, sans-serif;
-    /* Set global font to Verdana */
+    padding: 0;
+    overflow: hidden;
+    /* Prevent body scrolling */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* Set global font to Roboto */
 }
 
 /* Add margin to the content area within tabs */

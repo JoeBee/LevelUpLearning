@@ -1,1 +1,8 @@
-<p>content works!</p>
+<div class="content-container">
+    <button mat-raised-button color="primary" (click)="gamifyLecture()">Gamify Lecture</button>
+
+    <div class="text-area-container">
+        <textarea placeholder="Enter original lecture text here..." [(ngModel)]="originalLecture"></textarea>
+        <textarea placeholder="Gamified output will appear here..." [(ngModel)]="gamifiedLecture" readonly></textarea>
+    </div>
+</div>
