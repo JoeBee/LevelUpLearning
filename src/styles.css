@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    /* Set global font to Verdana */
+}
+
+/* Add margin to the content area within tabs */
+.mat-mdc-tab-body-content {
+    margin: 15px;
+    /* Ensure content doesn't overflow due to margin by adjusting box-sizing if needed */
+    /* box-sizing: border-box; */
+    /* Usually not needed as default is content-box */
+    /* height calculation might need adjustment if parent has fixed height */
+    /* height: calc(100% - 10px); */
+    /* Example if height: 100% was needed before */
+}
