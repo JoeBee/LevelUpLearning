@@ -1,0 +1,35 @@
+/* Style the main card */
+.options-card {
+    max-width: 1000px;
+    /* Adjust this value as needed */
+    margin: 20px auto;
+    /* Center the card and add some vertical margin */
+}
+
+/* Add styles for the two-column layout */
+.options-columns-container {
+    display: flex;
+    gap: 60px;
+    /* Adjust the gap between columns as needed */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens if necessary */
+}
+
+.options-left-column,
+.options-right-column {
+    flex: 1;
+    /* Make columns share space equally */
+    min-width: 300px;
+    /* Optional: set a minimum width for columns */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Space between items within a column */
+}
+
+/* Ensure form fields and sections take appropriate width */
+.options-field,
+.options-section {
+    width: 100%;
+    /* Make form fields/sections take full width of their column */
+}

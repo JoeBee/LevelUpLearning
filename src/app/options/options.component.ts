@@ -23,7 +23,7 @@ import { OptionsService } from '../shared/options.service'; // Import the servic
     MatCardModule
   ],
   templateUrl: './options.component.html',
-  styleUrl: './options.component.css'
+  styleUrl: './options.component.scss'
 })
 export class OptionsComponent implements OnInit {
   // Properties to hold the selected values
